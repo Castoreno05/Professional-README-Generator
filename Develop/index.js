@@ -33,11 +33,11 @@ inquirer
             message: 'Please enter a github username',
             name: 'username'
         },
-        // {
-        //     type: 'input',
-        //     message: 'What is your email?',
-        //     name: 'email'
-        // }
+        {
+            type: 'input',
+            message: 'What is your email?',
+            name: 'email'
+        }
     ])
     .then((answers) => {
         // Use user feedback for... whatever!!
@@ -87,7 +87,7 @@ ${data.description}
 
 For more information about my work please email me at <${data.email}>
 
-// My Github account can be found here 
+My Github account can be found here ${data.username}
 
 `
 }

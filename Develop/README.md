@@ -1,10 +1,10 @@
-## Password Generator
+## yes
     
 ---
     
 # Description
 
-Yes this is the discription   
+yes   
 
 ---
     
@@ -36,5 +36,5 @@ Yes this is the discription
 
 For more information about my work please email me at <matthew.castoreno@yahoo.com>
 
-My Github account can be found here 
+// My Github account can be found here https://www.github.com/Castoreno05
 
