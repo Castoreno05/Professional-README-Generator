@@ -60,7 +60,7 @@ ${data.description}
     
 # Table of Contents
 
-* # Questions
+* [Go to the Questions section](#questions)
 
 ---
     
