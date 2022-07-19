@@ -23,6 +23,21 @@ inquirer
             name: 'contact',
             choices: ['email', 'phone', 'telekinesis'],
         },
+        {
+            type: 'input',
+            message: 'Please provide a description of this application',
+            name: 'description',
+        },
+        {
+            type: 'input',
+            message: 'Please enter a github username',
+            name: 'username'
+        },
+        // {
+        //     type: 'input',
+        //     message: 'What is your email?',
+        //     name: 'email'
+        // }
     ])
     .then((answers) => {
         // Use user feedback for... whatever!!
@@ -39,7 +54,9 @@ function generateREADME(data) {
 ---
     
 # Description
-    
+
+${data.description}   
+
 ---
     
 # Table of Contents
@@ -66,7 +83,13 @@ function generateREADME(data) {
     
 ---
     
-# Questions`
+# Questions
+
+For more information about my work please email me at <${data.email}>
+
+// My Github account can be found here 
+
+`
 }
 //   .catch((error) => {
 //     if (error.isTtyError) {
