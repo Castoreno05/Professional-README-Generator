@@ -13,14 +13,14 @@ inquirer
         },
         {
             type: 'checkbox',
-            message: 'What languages would you like to be included?',
-            name: 'stack',
-            choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
+            message: 'Would you like to include a social media badge?',
+            name: 'socials',
+            choices: ['Linkedin', 'Facebook', 'Twitter', 'Instagram'],
         },
         {
             type: 'input',
             message: 'Please provide a description of the Installation process',
-            name: 'Installation',
+            name: 'installation',
         },
         {
             type: 'input',
@@ -48,7 +48,9 @@ inquirer
     });
 
 function generateREADME(data) {
-    return `## ${data.name}
+return `${data.choices}
+
+## ${data.name}
     
 ---
     
@@ -99,22 +101,4 @@ My Github account can be found here https://www.github.com/${data.username}
 
 `
 }
-//   .catch((error) => {
-//     if (error.isTtyError) {
-//       // Prompt couldn't be rendered in the current environment
-//     } else {
-//       // Something else went wrong
-//     }
-//   });
 
-// TODO: Create an array of questions for user input
-const questions = [];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
-
-// TODO: Create a function to initialize app
-function init() { }
-
-// Function call to initialize app
-init();
