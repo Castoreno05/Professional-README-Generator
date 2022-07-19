@@ -36,37 +36,37 @@ inquirer
 function generateREADME(data) {
     return `## ${data.name}
     
-    ---
+---
     
-    # Description
+# Description
     
-    ---
+---
     
-    # Table of Contents
+# Table of Contents
     
-    ---
+---
     
-    # Installation
+# Installation
     
-    ---
+---
     
-    # Usage
+# Usage
     
-    ---
+---
     
-    # License
+# License
     
-    ---
+---
     
-    # Contributing
+# Contributing
     
-    ---
+---
     
-    # Tests
+# Tests
     
-    ---
+---
     
-    # Questions`
+# Questions`
 }
 //   .catch((error) => {
 //     if (error.isTtyError) {
