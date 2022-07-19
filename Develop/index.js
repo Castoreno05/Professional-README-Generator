@@ -18,10 +18,9 @@ inquirer
             choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
         },
         {
-            type: 'list',
-            message: 'What is your preferred method of communication?',
-            name: 'contact',
-            choices: ['email', 'phone', 'telekinesis'],
+            type: 'input',
+            message: 'Please provide a description of the Installation process',
+            name: 'Installation',
         },
         {
             type: 'input',
@@ -60,11 +59,15 @@ ${data.description}
 ---
     
 # Table of Contents
-    
+
+* # Questions
+
 ---
     
 # Installation
-    
+  
+${data.installation}
+
 ---
     
 # Usage
