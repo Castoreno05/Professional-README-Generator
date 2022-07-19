@@ -1,15 +1,20 @@
-## yes
+## WeatherApp
     
 ---
     
 # Description
 
-yes   
+Search for a location to see what the current weather is. Once the search is complete then a current forecast and 5-day forecast will show on the page   
 
 ---
     
 # Table of Contents
 
+* [Go to the Installation section](#installation)
+* [Go to the Usage section](#useage)
+* [Go to the License section](#license)
+* [Go to the Contributing section](#cotributing)
+* [Go to the Tests section](#tests)
 * [Go to the Questions section](#questions)
 
 ---

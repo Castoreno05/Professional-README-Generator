@@ -60,6 +60,11 @@ ${data.description}
     
 # Table of Contents
 
+* [Go to the Installation section](#installation)
+* [Go to the Usage section](#useage)
+* [Go to the License section](#license)
+* [Go to the Contributing section](#cotributing)
+* [Go to the Tests section](#tests)
 * [Go to the Questions section](#questions)
 
 ---
