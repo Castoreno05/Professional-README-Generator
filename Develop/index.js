@@ -87,7 +87,7 @@ ${data.description}
 
 For more information about my work please email me at <${data.email}>
 
-My Github account can be found here ${data.username}
+My Github account can be found here https://www.github.com/${data.username}
 
 `
 }
