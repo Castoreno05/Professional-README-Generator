@@ -13,9 +13,9 @@ inquirer
         },
         {
             type: 'checkbox',
-            message: 'Would you like to include a social media badge?',
-            name: 'socials',
-            choices: ['Linkedin', 'Facebook', 'Twitter', 'Instagram'],
+            message: 'Which license badge would you like to include?',
+            name: 'license',
+            choices: ['MIT License', 'General Public License v3.0', 'Mozilla Public License 2.0']
         },
         {
             type: 'input',
@@ -34,7 +34,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'What is your email?',
+            message: 'What is your email address?',
             name: 'email'
         }
     ])
@@ -48,19 +48,48 @@ inquirer
     });
 
 
-function generateBadges(socials) {
-    var string = ""
+function createLicenseBadge(data) {
+    let license = `${data.license}`
+    let selectedLicense = ""
+    if (license === 'MIT License') {
+        selectedLicense = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+    } else if (license === 'General Public License v3.0') {
+        selectedLicense = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
+    } else if (license === 'Mozilla Public License 2.0') {
+        selectedLicense = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
+    }
+    return selectedLicense;
+}
 
-    socials.array.forEach(choices => {
-        string+=`https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white`
-    })
-    return string;
+function licenseLink(data) {
+    let license = `${data.license}`
+    let selectedLicense = ""
+    if (license === 'MIT License') {
+        selectedLicense = '(https://opensource.org/licenses/MIT)'
+    } else if (license === 'General Public License v3.0') {
+        selectedLicense = '(https://www.gnu.org/licenses/gpl-3.0)'
+    } else if (license === 'Mozilla Public License 2.0') {
+        selectedLicense = '(https://opensource.org/licenses/MPL-2.0)'
+    }
+    return selectedLicense;
+}
+
+function licneseSection(data) {
+    let license = `${data.license}`
+    let selectedLicense = ""
+    if (license === 'MIT License') {
+        selectedLicense = 'MIT License'
+    } else if (license === 'General Public License v3.0') {
+        selectedLicense = 'General Public License v3.0'
+    } else if (license === 'Mozilla Public License 2.0') {
+        selectedLicense = 'Mozilla Public License 2.0'
+    }
+    return selectedLicense;
 }
 
 function generateREADME(data) {
-
-return `${generateBadges(data.socials)}`
-return `${data.choices.answers}
+    return `
+### License: ${createLicenseBadge(data)}, ${licenseLink(data)}
 
 ## ${data.name}
     
@@ -95,6 +124,8 @@ ${data.installation}
     
 # License
     
+
+
 ---
     
 # Contributing
@@ -112,5 +143,5 @@ For more information about my work please email me at <${data.email}>
 My Github account can be found here https://www.github.com/${data.username}
 
 `
-}
+};
 
