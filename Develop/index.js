@@ -15,7 +15,7 @@ inquirer
             type: 'checkbox',
             message: 'Which license badge would you like to include?',
             name: 'license',
-            choices: ['MIT License', 'General Public License v3.0', 'Mozilla Public License 2.0']
+            choices: ['MIT License', 'General Public License v3.0', 'Mozilla Public License 2.0'],
         },
         {
             type: 'input',
@@ -48,48 +48,9 @@ inquirer
     });
 
 
-function createLicenseBadge(data) {
-    let license = `${data.license}`
-    let selectedLicense = ""
-    if (license === 'MIT License') {
-        selectedLicense = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`
-    } else if (license === 'General Public License v3.0') {
-        selectedLicense = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]`
-    } else if (license === 'Mozilla Public License 2.0') {
-        selectedLicense = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]`
-    }
-    return selectedLicense;
-}
-
-function licenseLink(data) {
-    let license = `${data.license}`
-    let selectedLicense = ""
-    if (license === 'MIT License') {
-        selectedLicense = '(https://opensource.org/licenses/MIT)'
-    } else if (license === 'General Public License v3.0') {
-        selectedLicense = '(https://www.gnu.org/licenses/gpl-3.0)'
-    } else if (license === 'Mozilla Public License 2.0') {
-        selectedLicense = '(https://opensource.org/licenses/MPL-2.0)'
-    }
-    return selectedLicense;
-}
-
-function licneseSection(data) {
-    let license = `${data.license}`
-    let selectedLicense = ""
-    if (license === 'MIT License') {
-        selectedLicense = 'MIT License'
-    } else if (license === 'General Public License v3.0') {
-        selectedLicense = 'General Public License v3.0'
-    } else if (license === 'Mozilla Public License 2.0') {
-        selectedLicense = 'Mozilla Public License 2.0'
-    }
-    return selectedLicense;
-}
-
 function generateREADME(data) {
-    return `
-### License: ${createLicenseBadge(data)}, ${licenseLink(data)}
+
+return `${data.choices}
 
 ## ${data.name}
     
