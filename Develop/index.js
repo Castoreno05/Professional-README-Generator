@@ -47,7 +47,19 @@ inquirer
         );
     });
 
+
+function generateBadges(socials) {
+    var string = ""
+
+    socials.array.forEach(choices => {
+        string+=`https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white`
+    })
+    return string;
+}
+
 function generateREADME(data) {
+
+return `${generateBadges(data.socials)}`
 return `${data.choices.answers}
 
 ## ${data.name}
