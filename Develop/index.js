@@ -48,7 +48,7 @@ inquirer
     });
 
 function generateREADME(data) {
-return `${data.choices}
+return `${data.choices.answers}
 
 ## ${data.name}
     
