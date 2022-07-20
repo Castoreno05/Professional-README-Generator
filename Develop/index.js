@@ -52,11 +52,11 @@ function createLicenseBadge(data) {
     let license = `${data.license}`
     let selectedLicense = ""
     if (license === 'MIT License') {
-        selectedLicense = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+        selectedLicense = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`
     } else if (license === 'General Public License v3.0') {
-        selectedLicense = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
+        selectedLicense = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]`
     } else if (license === 'Mozilla Public License 2.0') {
-        selectedLicense = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
+        selectedLicense = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]`
     }
     return selectedLicense;
 }
@@ -124,7 +124,7 @@ ${data.installation}
     
 # License
     
-
+This application is covered by the ${licneseSection(data)}
 
 ---
     

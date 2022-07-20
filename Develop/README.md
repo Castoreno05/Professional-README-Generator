@@ -1,7 +1,7 @@
 
 ### License: , 
 
-## ok
+## Password generator
     
 ---
     
@@ -34,7 +34,7 @@
     
 # License
     
-
+This application is covered by the 
 
 ---
     
