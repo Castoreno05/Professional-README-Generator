@@ -7,11 +7,6 @@ inquirer
     .prompt([
         /* Pass your questions in here */
         {
-            type: 'input',
-            name: 'name',
-            message: 'What is the name of this README?',
-        },
-        {
             type: 'list',
             message: 'Which license badge would you like to include?',
             name: 'license',
@@ -19,13 +14,29 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Please provide a description of the Installation process',
-            name: 'installation',
+            name: 'name',
+            message: 'What is the name of this README?',
         },
         {
             type: 'input',
             message: 'Please provide a description of this application',
             name: 'description',
+        },
+        {
+            type: 'input',
+            message: 'Please describe the steps required to install this project. Provide a step-by-step description of how to get the development environment running.',
+            name: 'installation',
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Please provide instructions and examples for use.'
+        },
+        {
+            type: 'input',
+            message: 'Please provide examples on how to run test here',
+            name: 'tests'
+
         },
         {
             type: 'input',
@@ -49,45 +60,45 @@ inquirer
 
 
 function renderLicenseBadge(data) {
-    let licenseType = `${data.license}`
-    let licenseChosen = ''
-    if (licenseType === 'MIT License') {
-        licenseChosen = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`
-    } else if (licenseType === 'General Public License v3.0') {
-        licenseChosen = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]`
-    } else if (licenseType === 'Mozilla Public License 2.0') {
-        licenseChosen = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]`
+    let license = `${data.license}`
+    let selectedLicense = ''
+    if (license === 'MIT License') {
+        selectedLicense = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`
+    } else if (license === 'General Public License v3.0') {
+        selectedLicense = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]`
+    } else if (license === 'Mozilla Public License 2.0') {
+        selectedLicense = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]`
     }
-    return licenseChosen;
+    return selectedLicense;
 }
 function renderLicenseLink(data) {
-    let licenseType = `${data.license}`
-    let licenseChosen = ''
-    if (licenseType === 'MIT License') {
-        licenseChosen = '(https://opensource.org/licenses/MIT)'
-    } else if (licenseType === 'General Public License v3.0') {
-        licenseChosen = '(https://www.gnu.org/licenses/gpl-3.0)'
-    } else if (licenseType === 'Mozilla Public License 2.0') {
-        licenseChosen= '(https://opensource.org/licenses/MPL-2.0)'
+    let license = `${data.license}`
+    let selectedLicense = ''
+    if (license === 'MIT License') {
+        selectedLicense = '(https://opensource.org/licenses/MIT)'
+    } else if (license === 'General Public License v3.0') {
+        selectedLicense = '(https://www.gnu.org/licenses/gpl-3.0)'
+    } else if (license === 'Mozilla Public License 2.0') {
+        selectedLicense= '(https://opensource.org/licenses/MPL-2.0)'
     }
-    return licenseChosen;
+    return selectedLicense;
 }
 
 function renderLicenseSection(data) {
-    let licenseType = `${data.license}`
-    let licenseChosen = ''
-    if (licenseType === 'MIT License') {
-        licenseChosen = 'MIT License'
-    } else if (licenseType === 'General Public License v3.0') {
-        licenseChosen = 'General Public License v3.0'
-    } else if (licenseType === 'Mozilla Public License 2.0') {
-        licenseChosen = 'Mozilla Public License 2.0'
+    let license = `${data.license}`
+    let selectedLicense = ''
+    if (license === 'MIT License') {
+        selectedLicense = 'MIT License'
+    } else if (license === 'General Public License v3.0') {
+        selectedLicense = 'General Public License v3.0'
+    } else if (license === 'Mozilla Public License 2.0') {
+        selectedLicense = 'Mozilla Public License 2.0'
     }
-    return licenseChosen;
+    return selectedLicense;
 }
 function generateREADME(data) {
 
-    return `## License: ${renderLicenseBadge(data)}, ${renderLicenseLink(data)}.
+    return `${renderLicenseBadge(data)}${renderLicenseLink(data)}
 
 ## ${data.name}
     
@@ -101,12 +112,12 @@ ${data.description}
     
 # Table of Contents
 
-* [Go to the Installation section](#installation)
-* [Go to the Usage section](#useage)
-* [Go to the License section](#license)
-* [Go to the Contributing section](#cotributing)
-* [Go to the Tests section](#tests)
-* [Go to the Questions section](#questions)
+* [Installation section](#installation)
+* [Usage section](#useage)
+* [License section](#license)
+* [Contributing section](#cotributing)
+* [Tests section](#tests)
+* [Questions section](#questions)
 
 ---
     
@@ -117,21 +128,27 @@ ${data.installation}
 ---
     
 # Usage
-    
+   
+${data.usage}
+
 ---
     
 # License
     
-This application is covered by the ${renderLicenseSection(data)}
+This application is covered under ${renderLicenseSection(data)}
 
 ---
     
 # Contributing
+
+
     
 ---
     
 # Tests
     
+${data.test}
+
 ---
     
 # Questions
