@@ -12,7 +12,7 @@ inquirer
             message: 'What is the name of this README?',
         },
         {
-            type: 'checkbox',
+            type: 'list',
             message: 'Which license badge would you like to include?',
             name: 'license',
             choices: ['MIT License', 'General Public License v3.0', 'Mozilla Public License 2.0'],
@@ -49,7 +49,7 @@ inquirer
 
 
 function renderLicenseBadge(data) {
-    let licenseType = `${data.choices}`
+    let licenseType = `${data.license}`
     let licenseChosen = ''
     if (licenseType === 'MIT License') {
         licenseChosen = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`
@@ -61,7 +61,7 @@ function renderLicenseBadge(data) {
     return licenseChosen;
 }
 function renderLicenseLink(data) {
-    let licenseType = `${data.choices}`
+    let licenseType = `${data.license}`
     let licenseChosen = ''
     if (licenseType === 'MIT License') {
         licenseChosen = '(https://opensource.org/licenses/MIT)'
@@ -74,7 +74,7 @@ function renderLicenseLink(data) {
 }
 
 function renderLicenseSection(data) {
-    let licenseType = `${data.choices}`
+    let licenseType = `${data.license}`
     let licenseChosen = ''
     if (licenseType === 'MIT License') {
         licenseChosen = 'MIT License'
