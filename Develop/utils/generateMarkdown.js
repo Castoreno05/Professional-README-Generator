@@ -45,7 +45,6 @@ function generateREADME(data) {
 
 # ${data.name}
     
----
     
 ## Description
 
