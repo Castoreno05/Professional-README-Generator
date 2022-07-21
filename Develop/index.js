@@ -48,9 +48,46 @@ inquirer
     });
 
 
+function renderLicenseBadge(data) {
+    let licenseType = `${data.choices}`
+    let licenseChosen = ''
+    if (licenseType === 'MIT License') {
+        licenseChosen = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`
+    } else if (licenseType === 'General Public License v3.0') {
+        licenseChosen = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]`
+    } else if (licenseType === 'Mozilla Public License 2.0') {
+        licenseChosen = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]`
+    }
+    return licenseChosen;
+}
+function renderLicenseLink(data) {
+    let licenseType = `${data.choices}`
+    let licenseChosen = ''
+    if (licenseType === 'MIT License') {
+        licenseChosen = '(https://opensource.org/licenses/MIT)'
+    } else if (licenseType === 'General Public License v3.0') {
+        licenseChosen = '(https://www.gnu.org/licenses/gpl-3.0)'
+    } else if (licenseType === 'Mozilla Public License 2.0') {
+        licenseChosen= '(https://opensource.org/licenses/MPL-2.0)'
+    }
+    return licenseChosen;
+}
+
+function renderLicenseSection(data) {
+    let licenseType = `${data.choices}`
+    let licenseChosen = ''
+    if (licenseType === 'MIT License') {
+        licenseChosen = 'MIT License'
+    } else if (licenseType === 'General Public License v3.0') {
+        licenseChosen = 'General Public License v3.0'
+    } else if (licenseType === 'Mozilla Public License 2.0') {
+        licenseChosen = 'Mozilla Public License 2.0'
+    }
+    return licenseChosen;
+}
 function generateREADME(data) {
 
-return `${data.choices}
+    return `## License: ${renderLicenseBadge(data)}, ${renderLicenseLink(data)}.
 
 ## ${data.name}
     
@@ -85,7 +122,7 @@ ${data.installation}
     
 # License
     
-This application is covered by the ${licneseSection(data)}
+This application is covered by the ${renderLicenseSection(data)}
 
 ---
     
