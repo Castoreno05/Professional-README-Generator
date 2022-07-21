@@ -84,7 +84,7 @@ This application is covered under ${renderLicenseSection(data)}
     
 ## Contributing
 
-${data.contributing}
+${data.contributors}
     
 ---
     
