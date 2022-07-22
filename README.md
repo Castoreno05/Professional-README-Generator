@@ -1,4 +1,4 @@
-# Professional-README-Generator Starter 
+# Professional-README-Generator
 
 ## Description
 
