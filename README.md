@@ -1,3 +1,16 @@
-# Professional README Generator Starter Code
+# Professional-README-Generator Starter 
 
-[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
+## Description
+
+In this module you will be given the ability to generate a professional README.md
+
+In the Intergrated Terminal for "index.js" run "node index.js". Then questions will prompt the user.
+
+The information from the user input is passed into the README.md to fill the sections with content.
+
+Once all of the questions are answered a README.md will generate and store into the "Develop" folder.
+
+
+---
+
+
