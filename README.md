@@ -2,13 +2,13 @@
 
 ## Description
 
-In this module you will be given the ability to generate a professional README.md
+In this module you will be given the ability to generate a professional README.md.
 
-In the Intergrated Terminal for "index.js" run "node index.js". Then questions will prompt the user.
+After opening the Intergrated Terminal for "index.js" run the command "node index.js". Questions will start to prompt the user.
 
-The information from the user input is passed into the README.md to fill the sections with content.
+Users answer is passed into the README.md to fill the sections with content.
 
-Once all of the questions are answered a README.md will generate and store into the "Develop" folder.
+When all of the questions are answered a README.md will generate and store into the "Develop" folder.
 
 
 ---
