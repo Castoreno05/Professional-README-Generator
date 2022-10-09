@@ -42,7 +42,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Provide a list of contributotrs along with their contact information',
+            message: 'Provide a list of contributors along with their contact information',
             name: 'contributors'
 
         },
